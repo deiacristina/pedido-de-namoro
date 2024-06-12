@@ -1,0 +1,126 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #ffe6e6;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    position: relative;
+}
+
+.container {
+    text-align: center;
+    z-index: 10;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ff3366;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    position: relative;
+}
+
+.yes {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.no {
+    background-color: #f44336;
+    color: white;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-100vh); opacity: 0; }
+}
+
+@keyframes enlarge {
+    0% { transform: scale(0); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.heart {
+    margin: 0;
+    background-color: red;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    opacity: 0;
+    animation: float 5s linear infinite;
+}
+
+.heart:before,
+.heart:after {
+    content: "";
+    background-color: red;
+    border-radius: 50%;
+    height: 20px;
+    position: absolute;
+    width: 20px;
+}
+
+.heart:before {
+    top: -10px;
+    left: 0;
+}
+
+.heart:after {
+    top: 0;
+    left: 10px;
+}
+
+.giant-heart {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    transform: translate(-50%, -50%);
+    animation: enlarge 1s forwards;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2rem;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+
+.giant-heart:before,
+.giant-heart:after {
+    content: "";
+    background-color: red;
+    border-radius: 50%;
+    height: 200px;
+    position: absolute;
+    width: 200px;
+}
+
+.giant-heart:before {
+    top: -100px;
+    left: 0;
+}
+
+.giant-heart:after {
+    top: 0;
+    left: 100px;
+}
